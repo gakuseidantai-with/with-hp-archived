@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "stylelint": "stylelint \"**/*.sass\""
+    "lint:css": "stylelint --fix **/*.{css,scss,sass}"
   },
   "dependencies": {
     "next": "11.0.0",
@@ -27,8 +27,10 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.3.1",
     "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-order": "^4.1.0",
+    "stylelint-prettier": "^1.2.0",
     "stylelint-scss": "^3.19.0",
     "typescript": "^4.3.4"
   }
