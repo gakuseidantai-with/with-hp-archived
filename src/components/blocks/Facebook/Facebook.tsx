@@ -45,5 +45,5 @@ export const Facebook: React.VFC = (): JSX.Element => {
 const styles = {
   shareButton: css`
     margin-top: -12px;
-  `
-}
+  `,
+};

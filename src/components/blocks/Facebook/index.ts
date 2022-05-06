@@ -1,1 +1,1 @@
-export * from "./Facebook"
+export * from "./Facebook";
