@@ -1,7 +1,8 @@
 import { css } from "@emotion/react";
 import Script from "next/script";
+import React from "react";
 
-export const useEmbeddedFacebook = (): JSX.Element => {
+export const Facebook: React.VFC = (): JSX.Element => {
   return (
     <>
       <iframe
@@ -10,7 +11,6 @@ export const useEmbeddedFacebook = (): JSX.Element => {
         height="40"
         scrolling="no"
         frameBorder="0"
-        allowTransparency={true}
         css={styles["shareButton"]}
       ></iframe>
       <div id="fb-root"></div>

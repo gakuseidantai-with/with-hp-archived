@@ -5,7 +5,6 @@ import { QueryClientProvider, QueryClient } from "react-query";
 import { GoogleAnalytics } from "~/components/blocks/GoogleAnalytics";
 import { usePageView } from "~/hooks/gtag";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Script from "next/script";
 
 const queryClient = new QueryClient();
 

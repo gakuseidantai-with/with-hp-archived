@@ -1,7 +1,8 @@
-import Script from "next/script";
+import React from "react";
 import { css } from "@emotion/react";
+import Script from "next/script";
 
-export const useEmbeddedTweetTimeline = (): JSX.Element => {
+export const Twitter: React.VFC = (): JSX.Element => {
   return (
     <>
       <div css={styles["buttonContainer"]}>

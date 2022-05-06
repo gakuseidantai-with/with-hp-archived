@@ -2,6 +2,8 @@ import Head from "next/head";
 import React from "react";
 import { RssFeed } from "~/@types/RssFeed";
 import { BlogSection } from "~/components/blocks/BlogSection";
+import { HeaderCover } from "~/components/blocks/HeaderCover";
+import { Information } from "~/components/blocks/Information";
 import { MainLayout } from "~/layout/MainLayout";
 
 type Props = {
@@ -15,6 +17,8 @@ export const Home: React.VFC<Props> = React.memo(({ rssFeed }): JSX.Element => {
         <title>学生団体with | トップページ</title>
       </Head>
       <MainLayout>
+        <HeaderCover />
+        <Information />
         <BlogSection rssFeed={rssFeed} />
       </MainLayout>
     </>

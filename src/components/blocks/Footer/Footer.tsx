@@ -1,21 +1,20 @@
 import React from "react";
-import Script from "next/script";
 import { css } from "@emotion/react";
-import { useEmbeddedTweetTimeline } from "~/hooks/useEmbeddedTweetTimeline";
-import { useEmbeddedFacebook } from "~/hooks/useEmbeddedFacebook";
+import { Twitter } from "../Twitter";
+import { Facebook } from "../Facebook";
 
 type Props = {};
 
 export const Footer: React.VFC<Props> = React.memo(({}): JSX.Element => {
-  const tweetTimeLine: JSX.Element = useEmbeddedTweetTimeline();
-  const facebookTimeLine: JSX.Element = useEmbeddedFacebook();
   return (
     <footer css={styles["footer"]}>
       <div className="container">
         <div className="row">
-          <div className="col-md-8">{tweetTimeLine}</div>
+          <div className="col-md-8">
+            <Twitter />
+          </div>
           <div className="col-md-4" css={styles["facebook"]}>
-            {facebookTimeLine}
+            <Facebook />
           </div>
         </div>
       </div>
