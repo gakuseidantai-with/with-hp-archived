@@ -1,11 +1,11 @@
 import React from "react";
-import { css } from "@emotion/react";
+import { css } from "linaria";
 import Script from "next/script";
 
-export const Twitter: React.VFC = (): JSX.Element => {
+export const Twitter: React.FC = (): JSX.Element => {
   return (
     <>
-      <div css={styles["buttonContainer"]}>
+      <div className={styles["buttonContainer"]}>
         <a
           className="twitter-share-button"
           href="https://twitter.com/share"

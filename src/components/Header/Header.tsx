@@ -1,21 +1,22 @@
 import Link from "next/link";
 import React from "react";
-import { css } from "@emotion/react";
+import { css } from "linaria";
+import clsx from "clsx";
 
 type Props = {};
 
-export const Header: React.VFC<Props> = React.memo(({}): JSX.Element => {
+export const Header: React.FC<Props> = React.memo(({}): JSX.Element => {
   return (
-    <header css={styles["headerContainer"]}>
-      <div className="col-md-12" css={styles["header"]}>
+    <header className={styles["headerContainer"]}>
+      <div className={clsx("col-md-12", styles["header"])}>
         <div className="col-md-6">
           <Link href="/">
             <a>
-              <img alt="" src="/images/with_logo.png" css={styles["logo"]} />
+              <img alt="" src="/images/with_logo.png" className={styles["logo"]} />
             </a>
           </Link>
         </div>
-        <nav role="navigation" className="col-md-6" css={styles["navigation"]}>
+        <nav role="navigation" className={clsx("col-md-6", styles["navigation"])}>
           <ul>
             <li>
               <Link href="/">

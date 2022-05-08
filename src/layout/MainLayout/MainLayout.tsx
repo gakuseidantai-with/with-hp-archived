@@ -1,17 +1,17 @@
 import React from "react";
 import { Header } from "~/components/Header/Header";
-import { css } from "@emotion/react";
+import { css } from "linaria";
 import { Footer } from "~/components/Footer";
 
 type Props = {
   children: React.ReactNode | React.ReactNodeArray;
 };
 
-export const MainLayout: React.VFC<Props> = React.memo(({ children }): JSX.Element => {
+export const MainLayout: React.FC<Props> = React.memo(({ children }): JSX.Element => {
   return (
-    <div css={styles["container"]}>
+    <div className={styles["container"]}>
       <Header />
-      <div css={styles["contentContainer"]}>{children}</div>
+      <div className={styles["contentContainer"]}>{children}</div>
       <Footer />
     </div>
   );

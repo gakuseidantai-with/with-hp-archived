@@ -1,29 +1,30 @@
-import { css } from "@emotion/react";
+import clsx from "clsx";
+import { css } from "linaria";
 import React from "react";
 import { FaRegEnvelope, FaTwitterSquare, FaInstagram, FaFacebookSquare } from "react-icons/fa";
 
-export const Information: React.VFC = React.memo((): JSX.Element => {
+export const Information: React.FC = React.memo((): JSX.Element => {
   return (
-    <div className="container" css={styles["container"]}>
+    <div className={clsx("container", styles["container"])}>
       <div className="row">
-        <div className="col-md-8 offset-md-2 text-center" css={styles["informationContainer"]}>
-          <h2 css={styles["title"]}>学生団体withとは</h2>
-          <h3 css={styles["subTitle"]}>&ldquo;人と人とをつなぐ、つながる&rdquo;</h3>
-          <p css={styles["description"]}>
+        <div className={clsx("col-md-8 offset-md-2 text-center", styles["informationContainer"])}>
+          <h2 className={styles["title"]}>学生団体withとは</h2>
+          <h3 className={styles["subTitle"]}>&ldquo;人と人とをつなぐ、つながる&rdquo;</h3>
+          <p className={styles["description"]}>
             地元学生に刺激を与え「意識改革」「スキルアップ」を促し、自ら行動するきっかけを与えるため2011年1月に「学生団体with」を設立。現在では地域の人に頼られる存在となり、全国からも注目を浴びる鯖江市の地方創生に大きく貢献しています。近年は、グローバル企業や地元企業と連携した取り組みも行うなど活動の幅を広げています。
           </p>
         </div>
         <hr />
-        <div className="col-md-8 offset-md-2 text-center" css={styles["inviteContainer"]}>
-          <img src="/images/with_catchCopy.jpg" alt="with_catchCopy" css={styles["catchCopy"]} />
-          <h2 css={styles["title"]}>メンバー大募集中！！</h2>
-          <p css={styles["description"]}>
+        <div className={clsx("col-md-8 offset-md-2 text-center", styles["inviteContainer"])}>
+          <img src="/images/with_catchCopy.jpg" alt="with_catchCopy" className={styles["catchCopy"]} />
+          <h2 className={styles["title"]}>メンバー大募集中！！</h2>
+          <p className={styles["description"]}>
             学生団体withは、県内トップクラスのプログラマーが在籍！
             <br />
             ホームページや運営しているイベントページ、システムも自分達で制作しています。
           </p>
         </div>
-        <div css={styles["socialContainer"]}>
+        <div className={styles["socialContainer"]}>
           <div className="col-lg-12 text-center">
             <div className="row">
               <div className="col-lg-6 text-center">

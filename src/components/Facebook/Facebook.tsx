@@ -1,8 +1,8 @@
-import { css } from "@emotion/react";
+import { css } from "linaria";
 import Script from "next/script";
 import React from "react";
 
-export const Facebook: React.VFC = (): JSX.Element => {
+export const Facebook: React.FC = (): JSX.Element => {
   return (
     <>
       <iframe
@@ -11,7 +11,7 @@ export const Facebook: React.VFC = (): JSX.Element => {
         height="40"
         scrolling="no"
         frameBorder="0"
-        css={styles["shareButton"]}
+        className={styles["shareButton"]}
       ></iframe>
       <div id="fb-root"></div>
       <Script id="fb" defer strategy="afterInteractive">

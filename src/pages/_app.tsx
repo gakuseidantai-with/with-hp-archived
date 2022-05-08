@@ -4,7 +4,7 @@ import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
 import GoogleAnalytics from "~/components/GoogleAnalytics/GoogleAnalytics";
 
-const App: React.VFC<AppProps> = ({ Component, pageProps }): JSX.Element => {
+const App: React.FC<AppProps> = ({ Component, pageProps }): JSX.Element => {
   return (
     <>
       <Head>

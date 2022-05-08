@@ -12,7 +12,7 @@ const config = {
   rules: {
     // custom
     "react/display-name": "off",
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
   },
 };
 

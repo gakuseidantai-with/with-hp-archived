@@ -1,16 +1,17 @@
-import { css } from "@emotion/react";
+import { css } from "linaria";
 import Link from "next/link";
 import React, { useEffect, useMemo, useState } from "react";
 import Moment from "react-moment";
 import { Article } from "~/@types/Article";
 import { RssFeed } from "~/@types/RssFeed";
 import { FaArrowRight } from "react-icons/fa";
+import clsx from "clsx";
 
 type Props = {
   rssFeed: RssFeed;
 };
 
-export const BlogSection: React.VFC<Props> = React.memo(({ rssFeed }): JSX.Element => {
+export const BlogSection: React.FC<Props> = React.memo(({ rssFeed }): JSX.Element => {
   // ブログリスト保持用
   const [articleList, setArticleList] = useState<Article[]>([]);
   // サムネイル抽出用正規表現
@@ -41,34 +42,34 @@ export const BlogSection: React.VFC<Props> = React.memo(({ rssFeed }): JSX.Eleme
   }, [rssFeed.items, thumbnailLinkRegex]);
 
   return (
-    <div css={styles["blogContainer"]}>
+    <div className={styles["blogContainer"]}>
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <h2 css={styles["sectionTitle"]}>withブログ</h2>
-            <p css={styles["sectionSubTitle"]}>
+            <h2 className={styles["sectionTitle"]}>withブログ</h2>
+            <p className={styles["sectionSubTitle"]}>
               会議での出来事や、イベント情報などを発信中です。
               <br />※ 最新の6記事を表示しています
             </p>
           </div>
           {articleList.map((article, index) => (
-            <div key={index} className="col-md-6" css={styles["cardView"]}>
-              <a href={article.link} css={styles["cardLink"]} target="_blank" rel="noreferrer">
-                <img alt={article.title} src={article.thumbnailLink} css={styles["thumbnail"]} />
-                <div css={styles["content"]}>
-                  <h3 css={styles["title"]}>{article.title}</h3>
-                  <Moment format="YYYY/MM/DD" css={styles["publishDate"]}>
+            <div key={index} className={clsx("col-md-6", styles["cardView"])}>
+              <a href={article.link} className={styles["cardLink"]} target="_blank" rel="noreferrer">
+                <img alt={article.title} src={article.thumbnailLink} className={styles["thumbnail"]} />
+                <div className={styles["content"]}>
+                  <h3 className={styles["title"]}>{article.title}</h3>
+                  <Moment format="YYYY/MM/DD" className={styles["publishDate"]}>
                     {article.date}
                   </Moment>
-                  <h5 css={styles["description"]}>{article.description}</h5>
+                  <h5 className={styles["description"]}>{article.description}</h5>
                 </div>
               </a>
             </div>
           ))}
         </div>
-        <div css={styles["readMoreButtonContainer"]}>
+        <div className={styles["readMoreButtonContainer"]}>
           <Link href="/blog">
-            <a className="btn btn-primary" css={styles["readMoreButton"]}>
+            <a className={clsx("btn", "btn-primary", styles["readMoreButton"])}>
               もっとみる
               <FaArrowRight className="icon" />
             </a>
