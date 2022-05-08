@@ -1,16 +1,10 @@
 import React from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import { QueryClientProvider, QueryClient } from "react-query";
-import { GoogleAnalytics } from "~/components/blocks/GoogleAnalytics";
-import { usePageView } from "~/hooks/gtag";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-const queryClient = new QueryClient();
+import GoogleAnalytics from "~/components/GoogleAnalytics/GoogleAnalytics";
 
 const App: React.VFC<AppProps> = ({ Component, pageProps }): JSX.Element => {
-  usePageView();
-
   return (
     <>
       <Head>
@@ -62,9 +56,7 @@ const App: React.VFC<AppProps> = ({ Component, pageProps }): JSX.Element => {
         <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png" />
       </Head>
       <GoogleAnalytics />
-      <QueryClientProvider client={queryClient}>
-        <Component {...pageProps} />
-      </QueryClientProvider>
+      <Component {...pageProps} />
     </>
   );
 };

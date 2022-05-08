@@ -1,6 +1,6 @@
 import { css } from "@emotion/react";
 import React from "react";
-import { FaLaptop, FaServer, FaMoneyBillAlt } from "react-icons/fa";
+import { FaLaptop, FaHandshake, FaMoneyBillAlt } from "react-icons/fa";
 
 export const ActivitySection: React.VFC = React.memo((): JSX.Element => {
   return (
@@ -28,7 +28,7 @@ export const ActivitySection: React.VFC = React.memo((): JSX.Element => {
           <img src="images/kyoeikai.jpg" alt="" css={styles["media"]} />
           <div css={styles["activityContentContainer"]}>
             <div css={styles["activityTitleContainer"]}>
-              <FaServer size={"3em"} color={"#27e1ce"} css={styles["activityTitleIcon"]} />
+              <FaHandshake size={"3em"} color={"#27e1ce"} css={styles["activityTitleIcon"]} />
               <h3 css={styles["activityTitle"]}>
                 日中友好事業
                 <br />
@@ -79,20 +79,39 @@ const styles = {
   activityContainer: css`
     display: flex;
     align-items: flex-start;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
   `,
   media: css`
     width: 300px;
     object-fit: fill;
     margin-right: 32px;
+
+    @media screen and (max-width: 768px) {
+      margin-right: 0;
+    }
   `,
   activityContentContainer: css`
     display: flex;
     flex-direction: column;
+
+    @media screen and (max-width: 768px) {
+      width: 300px;
+    }
   `,
   activityTitleContainer: css`
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
+
+    @media screen and (max-width: 768px) {
+      margin-top: 16px;
+      margin-bottom: 12px;
+    }
   `,
   activityTitle: css`
     font-size: 20px;
@@ -100,7 +119,12 @@ const styles = {
     margin: 0;
   `,
   activityTitleIcon: css`
+    width: 3em;
     margin-right: 24px;
+
+    @media screen and (max-width: 768px) {
+      margin-right: 12px;
+    }
   `,
   activityDescription: css`
     color: #7f7f7f;

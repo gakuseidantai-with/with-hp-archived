@@ -1,7 +1,7 @@
 import React from "react";
-import { Header } from "~/components/blocks/Header/Header";
+import { Header } from "~/components/Header/Header";
 import { css } from "@emotion/react";
-import { Footer } from "~/components/blocks/Footer";
+import { Footer } from "~/components/Footer";
 
 type Props = {
   children: React.ReactNode | React.ReactNodeArray;
