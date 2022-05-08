@@ -1,7 +1,7 @@
 import React from "react";
 import { Header } from "~/components/Header";
 import { css } from "linaria";
-import { Footer } from "~/components/footer";
+import { Footer } from "~/components/Footer";
 
 type Props = {
   children: React.ReactNode | React.ReactNodeArray;
