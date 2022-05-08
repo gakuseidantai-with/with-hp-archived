@@ -41,43 +41,41 @@ export const BlogSection: React.VFC<Props> = React.memo(({ rssFeed }): JSX.Eleme
   }, [rssFeed.items, thumbnailLinkRegex]);
 
   return (
-    <>
-      <div css={styles["blogContainer"]}>
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <h2 css={styles["sectionTitle"]}>withブログ</h2>
-              <p css={styles["sectionSubTitle"]}>
-                会議での出来事や、イベント情報などを発信中です。
-                <br />※ 最新の6記事を表示しています
-              </p>
-            </div>
-            {articleList.map((article, index) => (
-              <div key={index} className="col-md-6" css={styles["cardView"]}>
-                <a href={article.link} css={styles["cardLink"]} target="_blank" rel="noreferrer">
-                  <img alt={article.title} src={article.thumbnailLink} css={styles["thumbnail"]} />
-                  <div css={styles["content"]}>
-                    <h3 css={styles["title"]}>{article.title}</h3>
-                    <Moment format="YYYY/MM/DD" css={styles["publishDate"]}>
-                      {article.date}
-                    </Moment>
-                    <h5 css={styles["description"]}>{article.description}</h5>
-                  </div>
-                </a>
-              </div>
-            ))}
+    <div css={styles["blogContainer"]}>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <h2 css={styles["sectionTitle"]}>withブログ</h2>
+            <p css={styles["sectionSubTitle"]}>
+              会議での出来事や、イベント情報などを発信中です。
+              <br />※ 最新の6記事を表示しています
+            </p>
           </div>
-          <div css={styles["readMoreButtonContainer"]}>
-            <Link href="/blog">
-              <a className="btn btn-primary" css={styles["readMoreButton"]}>
-                もっとみる
-                <FaArrowRight className="icon" />
+          {articleList.map((article, index) => (
+            <div key={index} className="col-md-6" css={styles["cardView"]}>
+              <a href={article.link} css={styles["cardLink"]} target="_blank" rel="noreferrer">
+                <img alt={article.title} src={article.thumbnailLink} css={styles["thumbnail"]} />
+                <div css={styles["content"]}>
+                  <h3 css={styles["title"]}>{article.title}</h3>
+                  <Moment format="YYYY/MM/DD" css={styles["publishDate"]}>
+                    {article.date}
+                  </Moment>
+                  <h5 css={styles["description"]}>{article.description}</h5>
+                </div>
               </a>
-            </Link>
-          </div>
+            </div>
+          ))}
+        </div>
+        <div css={styles["readMoreButtonContainer"]}>
+          <Link href="/blog">
+            <a className="btn btn-primary" css={styles["readMoreButton"]}>
+              もっとみる
+              <FaArrowRight className="icon" />
+            </a>
+          </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 });
 
