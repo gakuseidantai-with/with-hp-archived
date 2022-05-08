@@ -26,19 +26,23 @@ const Members: NextPage<Props> = ({ memberList }: Props): JSX.Element => {
               </div>
               <div className={clsx("col-md-12")}>
                 <div className={clsx(styles["memberList"])}>
-                  {memberList.map(
-                    (member: Member): JSX.Element => (
-                      <div className={clsx(styles["member"])} key={member.id}>
-                        <div>
-                          <img src={member.image.url} alt={member.name} className={clsx(styles["image"])} />
+                  {memberList.length != 0 ? (
+                    memberList.map(
+                      (member: Member): JSX.Element => (
+                        <div className={clsx(styles["member"])} key={member.id}>
+                          <div>
+                            <img src={member.image.url} alt={member.name} className={clsx(styles["image"])} />
+                          </div>
+                          <div className={clsx(styles["info"])}>
+                            <p className={clsx(styles["position"])}>{member.position}</p>
+                            <p className={clsx(styles["belong"])}>{member.belong}</p>
+                            <h3 className={clsx(styles["name"])}>{member.name}</h3>
+                          </div>
                         </div>
-                        <div className={clsx(styles["info"])}>
-                          <p className={clsx(styles["position"])}>{member.position}</p>
-                          <p className={clsx(styles["belong"])}>{member.belong}</p>
-                          <h3 className={clsx(styles["name"])}>{member.name}</h3>
-                        </div>
-                      </div>
+                      )
                     )
+                  ) : (
+                    <h3 className={styles["listEmpty"]}>現在作成中...</h3>
                   )}
                 </div>
               </div>
@@ -96,6 +100,9 @@ const styles = {
     font-size: 1.2rem;
     font-weight: 400;
     margin: 0;
+  `,
+  listEmpty: css`
+    text-align: center;
   `,
 };
 
