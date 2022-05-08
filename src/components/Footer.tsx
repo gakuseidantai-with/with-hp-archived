@@ -1,7 +1,7 @@
 import React from "react";
 import { css } from "linaria";
-import { Twitter } from "../Twitter";
-import { Facebook } from "../Facebook";
+import { Twitter } from "~/components/Twitter";
+import { Facebook } from "~/components/Facebook";
 import clsx from "clsx";
 
 type Props = {};

@@ -2,8 +2,7 @@ import { css } from "linaria";
 import Link from "next/link";
 import React, { useEffect, useMemo, useState } from "react";
 import Moment from "react-moment";
-import { Article } from "~/@types/Article";
-import { RssFeed } from "~/@types/RssFeed";
+import { Article, RssFeed } from "~/@types/ameblo";
 import { FaArrowRight } from "react-icons/fa";
 import clsx from "clsx";
 

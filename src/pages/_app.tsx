@@ -2,7 +2,8 @@ import React from "react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import "bootstrap/dist/css/bootstrap.min.css";
-import GoogleAnalytics from "~/components/GoogleAnalytics/GoogleAnalytics";
+import GoogleAnalytics from "~/components/GoogleAnalytics";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }): JSX.Element => {
   return (
@@ -56,7 +57,9 @@ const App: React.FC<AppProps> = ({ Component, pageProps }): JSX.Element => {
         <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png" />
       </Head>
       <GoogleAnalytics />
-      <Component {...pageProps} />
+      <ChakraProvider resetCSS={false}>
+        <Component {...pageProps} />
+      </ChakraProvider>
     </>
   );
 };
