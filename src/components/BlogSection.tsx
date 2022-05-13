@@ -67,7 +67,7 @@ export const BlogSection: React.FC<Props> = React.memo(({ rssFeed }): JSX.Elemen
           ))}
         </div>
         <div className={styles["readMoreButtonContainer"]}>
-          <Link href="/blog">
+          <Link href="https://ameblo.jp/gakuren/entrylist.html">
             <a className={clsx("btn", "btn-primary", styles["readMoreButton"])}>
               もっとみる
               <FaArrowRight className="icon" />
