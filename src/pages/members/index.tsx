@@ -55,7 +55,10 @@ const Members: NextPage<Props> = ({ memberList }: Props): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (_context): Promise<{ props: Props }> => {
-  const response: MembersResponse = await cmsClient.get<MembersResponse>({ endpoint: "members" });
+  const response: MembersResponse = await cmsClient.get<MembersResponse>({
+    endpoint: "members",
+    queries: { limit: 999 },
+  });
 
   return {
     props: { memberList: response.contents },
