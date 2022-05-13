@@ -1,10 +1,10 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Header } from "~/components/Header";
 import { css } from "linaria";
 import { Footer } from "~/components/Footer";
 
 type Props = {
-  children: React.ReactNode | React.ReactNodeArray;
+  children: ReactNode | ReactNode[];
 };
 
 export const MainLayout: React.FC<Props> = React.memo(({ children }): JSX.Element => {
