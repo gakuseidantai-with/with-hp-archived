@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
+    "postexport": "next-sitemap",
     "lint": "run-p -l -c --aggregate-output lint:*",
     "lint:eslint": "eslint ./src",
     "lint:prettier": "prettier --check ./src",
