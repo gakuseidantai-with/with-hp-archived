@@ -56,7 +56,12 @@ const App: React.FC<AppProps> = ({ Component, pageProps }): JSX.Element => {
         <meta name="msapplication-TileColor" content="#2d88ef" />
         <meta name="msapplication-TileImage" content="/images/favicons/mstile-144x144.png" />
       </Head>
-      <script async src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      <script
+        async
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossOrigin="anonymous"
+      ></script>
       <script async src="//cdnjs.cloudflare.com/ajax/libs/three.js/87/three.min.js"></script>
       <GoogleAnalytics />
       <ChakraProvider resetCSS={false}>
