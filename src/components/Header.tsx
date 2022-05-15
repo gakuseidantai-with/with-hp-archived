@@ -57,7 +57,7 @@ const HeaderMenuList: React.FC = React.memo(() => {
         pt={{ base: "8px", md: 0 }}
         pb={{ base: "8px", md: 0 }}
       >
-        鯖江市地域活性化ブランコンテスト
+        鯖江市地域活性化プランコンテスト
       </ListItem>
     </UnorderedList>
   );

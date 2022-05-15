@@ -35,6 +35,9 @@ const styles = {
   twitterFollowButton: css``,
   twitterTimeline: css``,
   facebook: css`
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   `,
 };

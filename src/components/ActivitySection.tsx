@@ -92,6 +92,7 @@ const styles = {
     margin-right: 32px;
 
     @media screen and (max-width: 768px) {
+      width: 100%;
       margin-right: 0;
     }
   `,
@@ -100,7 +101,7 @@ const styles = {
     flex-direction: column;
 
     @media screen and (max-width: 768px) {
-      width: 300px;
+      width: 90%;
     }
   `,
   activityTitleContainer: css`

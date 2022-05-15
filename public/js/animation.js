@@ -24,8 +24,8 @@ $(function () {
     pictureDataList = [],
     animationList = ["rotateX", "rotateY", "zoomUp", "zoomOut"],
     particleTextureList = [],
-    particlePositionRatio = "mobile" == userAgent() ? 1 : 1.5,
-    dispersionRate = "mobile" == userAgent() ? 2 : 1.5,
+    particlePositionRatio = "mobile" == userAgent() ? 1 : 4,
+    dispersionRate = "mobile" == userAgent() ? 2 : 0.5,
     currentPictureIndex = -1,
     trajectoryList = [];
   initialize();
@@ -132,7 +132,7 @@ $(function () {
                   particlePositionListList.push(particlePositionList);
                   geometryList.push(geometry);
                   particleMaterialList[i] = new THREE.PointsMaterial({
-                    size: 8,
+                    size: 6,
                     map: particleTextureList[i],
                     depthTest: false,
                     transparent: true,
@@ -225,7 +225,6 @@ $(function () {
     trajectoryList.length > 5 && trajectoryList.shift();
   }
   function resetParticle() {
-    console.log("called resetParticle()");
     trajectoryList = [];
 
     const prevPictureIndex = currentPictureIndex;
@@ -239,7 +238,6 @@ $(function () {
     }, 1e3 + 5e2);
   }
   function moveParticle() {
-    console.log("called moveParticle()");
     for (var i = 0; i < particleImagePathList.length; i++) {
       for (var j = 0; j < geometryList[i].vertices.length; ++j) {
         if (-1 == currentPictureIndex) {
@@ -259,7 +257,6 @@ $(function () {
     }
   }
   function tickAnimation() {
-    console.log("called tickAnimation()");
     requestAnimationFrame(tickAnimation);
     (function () {
       (group.position.x = 0),
