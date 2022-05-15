@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { css } from "linaria";
 import Script from "next/script";
 import React from "react";
