@@ -20,7 +20,7 @@ $(function () {
     particleMeshList = [],
     particleMaterialList = [],
     particleImagePathList = ["/images/particle.png"],
-    picturePathList = particleImagePathList.concat(["/images/with_logo.png"]),
+    picturePathList = particleImagePathList.concat(["/images/visual.png"]),
     pictureDataList = [],
     animationList = ["rotateX", "rotateY", "zoomUp", "zoomOut"],
     particleTextureList = [],
