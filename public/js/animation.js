@@ -24,7 +24,7 @@ $(function () {
     pictureDataList = [],
     animationList = ["rotateX", "rotateY", "zoomUp", "zoomOut"],
     particleTextureList = [],
-    particlePositionRatio = "mobile" == userAgent() ? 1 : 4,
+    particlePositionRatio = "mobile" == userAgent() ? 1 : 3,
     dispersionRate = "mobile" == userAgent() ? 2 : 0.5,
     currentPictureIndex = -1,
     trajectoryList = [];
